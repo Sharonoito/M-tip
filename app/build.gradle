@@ -8,8 +8,8 @@ android {
 
     defaultConfig {
         applicationId "com.example.mtip"
-        minSdk 21
-        targetSdk 31
+        minSdk 18
+        targetSdk 30
         versionCode 1
         versionName "1.0"
 
@@ -49,7 +49,6 @@ dependencies {
     implementation 'androidx.core:core-google-shortcuts:1.0.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-
-
+    implementation 'com.huangyz0918:androidwm-light:0.1.2'
 
 }

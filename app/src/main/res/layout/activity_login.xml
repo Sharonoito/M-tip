@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WhatsappActivity">
+    tools:context=".LoginActivity">
 
 
     <WebView
-        android:id="@+id/tvwebView3"
+        android:id="@+id/tvwebView"
         android:layout_width="409dp"
         android:layout_height="729dp"
         android:layout_marginTop="1dp"

@@ -14,16 +14,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mtip">
         <activity
+            android:name=".LoginActivity"
+            android:configChanges="uiMode"
+            android:exported="true" />
+        <activity
             android:name=".WhatsappActivity"
+            android:configChanges="uiMode"
             android:exported="true" />
         <activity
             android:name=".WebsiteActivity"
+            android:configChanges="uiMode"
             android:exported="true" />
         <activity
             android:name=".GiveTipActivity"
+            android:configChanges="uiMode"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
+            android:configChanges="uiMode"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

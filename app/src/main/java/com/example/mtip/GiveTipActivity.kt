@@ -30,9 +30,7 @@ class GiveTipActivity : AppCompatActivity() {
         finish()
         btnCode.setOnClickListener {
             callNumber( "*682%23")
-//            val intent = Intent(Intent.ACTION_DIAL)
-//            intent.data = Uri.parse("code:" + "$ussdcode")
-//            startActivity(intent)
+
         }
     }
 

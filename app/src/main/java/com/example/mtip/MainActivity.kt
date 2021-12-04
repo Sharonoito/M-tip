@@ -3,18 +3,43 @@ package com.example.mtip
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
+import android.content.res.Configuration
+import android.icu.text.DateFormat.DAY
+import android.icu.util.MeasureUnit.DAY
 import android.os.Build
 import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.Button
 import android.widget.PopupWindow
 import android.widget.TextView
 
 
 class MainActivity : AppCompatActivity() {
-    lateinit var tvUssd:TextView
-    lateinit var btnLogin:Button
-    lateinit var tvWhatsapp:TextView
     lateinit var tvChoices:TextView
+    lateinit var btnUssd:Button
+    lateinit var btnWhatsapp:Button
+    lateinit var btnWebsite:Button
+    lateinit var btnLogin:Button
+    lateinit var tvwebView:WebView
+
+//
+//    override fun onConfigurationChanged(newConfig: Configuration) {
+//        super.onConfigurationChanged(newConfig)
+//        val nightModeFlags = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+//
+//        if (nightModeFlags == Configuration.UI_MODE_NIGHT_NO){
+//            applyDayNight(OnDayNightStateChanged.DAY)
+//        }else{
+//            applyDayNight(OnDayNightStateChanged.NIGHT)
+//        }
+//    }
+//    private fun applyDayNight(state: Int){
+//        if (state == OnDayNightStateChanged.DAY){
+//            //apply day colors for your views
+//        }else{
+//            //apply night colors for your views
+//        }
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,29 +51,31 @@ class MainActivity : AppCompatActivity() {
         window.contentView=view
         var textView=view.findViewById<TextView>(R.id.tvChoices)
 
+
         var btnUssd=findViewById<Button>(R.id.btnUssd).setOnClickListener {
             var intent=Intent(this,GiveTipActivity::class.java)
             startActivity(intent)
+            finish()
         }
+
+
         var btnLogin=findViewById<Button>(R.id.btnLogin).setOnClickListener {
-                var myWebView: WebView = findViewById(R.id.tvwebView)
-                myWebView.loadUrl("http://m-tip.app/dashboard")
-                finish()
+            var intent=Intent(this,LoginActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
         var btnWhatsapp=findViewById<Button>(R.id.btnWhatsapp).setOnClickListener {
-                var myWebView: WebView = findViewById(R.id.tvwebView)
-                myWebView.loadUrl("https://wa.link/m-tip")
-                finish()
+            intent= Intent(this,WhatsappActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
         var btnWebsite=findViewById<Button>(R.id.btnWebsite).setOnClickListener {
-            var webView:WebView=findViewById(R.id.tvwebView)
-            webView.loadUrl("https://m-tip.app")
+            intent= Intent(this,WebsiteActivity::class.java)
+            startActivity(intent)
            finish()
-        }
-
-
+     }
         textView.setOnClickListener {
             window.showAsDropDown(textView)
         }
@@ -57,29 +84,18 @@ class MainActivity : AppCompatActivity() {
             //Sets up our shortcuts
             Shortcuts.setUp(applicationContext)
         }
-//        val myWebView: WebView = findViewById(R.id.tvwebView)
-//        myWebView.loadUrl("http://m-tip.app/dashboard")
-//        finish()
-
-
-
 
     }
 
     }
 
+class OnDayNightStateChanged {
+
+}
 
 
 
 
-
-
-
-
-
-
-
-//
 
 
 

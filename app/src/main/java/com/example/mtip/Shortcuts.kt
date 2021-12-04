@@ -27,7 +27,7 @@ object Shortcuts {
         val shortcut = ShortcutInfo.Builder(context, shortcut_website_id)
             .setShortLabel("Website")
             .setLongLabel("Open the website")
-            .setIcon(Icon.createWithResource(context, R.drawable.ic_chat))
+            .setIcon(Icon.createWithResource(context, R.drawable.ic_website))
             .setIntent(
                 Intent(
                     Intent.ACTION_VIEW,
